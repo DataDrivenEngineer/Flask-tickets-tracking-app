@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, redirect
+from flask import Flask, render_template, url_for, redirect, request
 from flask_migrate import Migrate
 
 def create_app():
@@ -24,5 +24,10 @@ def create_app():
     def index():
         tickets = db.session.query(Ticket).all()
         return render_template('ticket_index.html', tickets=tickets)
+
+    @app.route('/tickets/<uuid:ticket_uuid>')
+    def show_ticket(ticket_uuid):
+        ticket = db.session.query(Ticket).filter_by(id = ticket_uuid).first()
+        return render_template('ticket_info.html', ticket=ticket)
 
     return app

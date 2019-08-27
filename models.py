@@ -14,3 +14,9 @@ class Ticket(db.Model):
 
     def __repr__(self):
         return f"Ticket: name={self.name}, status={self.status}, url={self.url}"
+
+    #get string representation of status
+    @property
+    def get_status(self):
+        all_statuses = {'0': 'Reported', '1': 'In Progress', '2': 'In Review', '3': 'Resolved'}
+        return all_statuses[str(self.status)]
