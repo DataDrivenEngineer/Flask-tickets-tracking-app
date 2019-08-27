@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if not tickets %}
+    <div class="content">
+        <p>You do not have any tickets!</p>
+    </div>
+  {% endif %}
+
+  {% if tickets %}
+  <div class="content">
+    <ol type="1">
+      {% for ticket in tickets %}
+      <li>
+      <a href="#">{{ ticket.name }}</a>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+  {% endif %}
+{% endblock %}

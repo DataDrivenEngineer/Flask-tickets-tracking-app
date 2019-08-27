@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if not tickets %}
+    <div class="content">
+        <p>You do not have any tickets!</p>
+    </div>
+  {% endif %}
+
+  {% for ticket in tickets %}
+    <article class="message">
+      <div class="message-header">
+        <p>{{ ticket.name }}<a href="#"></a>
+            <a class="button is-primary is-small has-text-weight-bold" href="#">Back
+            </a>
+      </div>
+      <div class="message-body content">
+        <p>Status: {{ ticket.status }}</p>
+        {% if ticket.url  %}
+        <p>{{ ticket.url }}</p>
+        {% else %}
+        <p>URL is not available</p>
+        {% endif %}
+      </div>
+    </article>
+  {% endfor %}
+{% endblock %}
