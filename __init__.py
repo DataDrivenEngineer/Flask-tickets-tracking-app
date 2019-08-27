@@ -28,6 +28,20 @@ def create_app():
     @app.route('/tickets/<uuid:ticket_uuid>')
     def show_ticket(ticket_uuid):
         ticket = db.session.query(Ticket).filter_by(id = ticket_uuid).first()
+        if not ticket.url:
+            ticket.url = '/tickets/' + str(ticket_uuid)
+            db.session.add(ticket)
+            db.session.commit()
+
         return render_template('ticket_info.html', ticket=ticket)
+
+    @app.route('/add_tickets')
+    def add_tickets():
+        ticket_2 = Ticket(name='Approvers are not assigned automatically', status=2)
+        ticket_3 = Ticket(name='App crashes when click "Reject"', status = 3)
+        db.session.add(ticket_2)
+        db.session.add(ticket_3)
+        db.session.commit()
+        return 'Success'
 
     return app

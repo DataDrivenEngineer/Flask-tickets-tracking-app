@@ -7,7 +7,7 @@ db = SQLAlchemy()
 class Ticket(db.Model):
     __tablename__ = 'ticket'
 
-    id = db.Column(UUID(as_uuid=True), primary_key=True, nullable=False, server_default=str(uuid.uuid4()))
+    id = db.Column(UUID(as_uuid=True), primary_key=True, nullable=False, default=lambda: str(uuid.uuid4()))
     name = db.Column(db.String(length=100), nullable=False)
     status = db.Column(db.Integer, nullable=False, server_default='0')
     url = db.Column(db.String(length=100), nullable=True)

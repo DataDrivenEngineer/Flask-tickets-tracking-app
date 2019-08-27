@@ -9,11 +9,7 @@
       </div>
       <div class="message-body content">
         <p>Status: {{ ticket.get_status }}</p>
-        {% if ticket.url  %}
-        <p>{{ ticket.url }}</p>
-        {% else %}
-        <p>URL is not available</p>
-        {% endif %}
+        <p>URL: {{ ticket.url }}</p>
       </div>
     </article>
 {% endblock %}

@@ -17,7 +17,7 @@ URL: Optional
 
 1. Render a listing view at `/tickets`
 2. Render an individual ticket's information at `/tickets/:id`
-3. Provide a JSON API for `/api/tickets` and `/api/tickets/:id`
+3. Provide a JSON API for `/api/tickets` and `/api/tickets/:id` that returns the JSON serialized ticket information
 
 ## Database details
 
