@@ -35,13 +35,4 @@ def create_app():
 
         return render_template('ticket_info.html', ticket=ticket)
 
-    @app.route('/add_tickets')
-    def add_tickets():
-        ticket_2 = Ticket(name='Approvers are not assigned automatically', status=2)
-        ticket_3 = Ticket(name='App crashes when click "Reject"', status = 3)
-        db.session.add(ticket_2)
-        db.session.add(ticket_3)
-        db.session.commit()
-        return 'Success'
-
     return app
