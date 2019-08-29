@@ -5,13 +5,13 @@ A web application that provides dashboard for viewing statuses of existing bug t
 
 ## Ticket structure
 
-Name: Required
-Status: Required, available options are:
-  0 (Reported)
-  1 (In Progress)
-  2 (In review)
-  3 (Resolved)
-URL: Optional
+* Name: Required
+* Status: Required, available options are:
+  * 0 (Reported)
+  * 1 (In Progress)
+  * 2 (In review)
+  * 3 (Resolved)
+* URL: Optional
 
 ## What is needed to do
 
