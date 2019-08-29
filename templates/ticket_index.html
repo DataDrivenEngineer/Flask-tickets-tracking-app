@@ -12,7 +12,7 @@
     <ol type="1">
       {% for ticket in tickets %}
       <li>
-      <a href="{{ url_for('show_ticket', ticket_uuid=ticket.id) }}">{{ ticket.name }}</a>
+      <a href="{{ url_for('tickets.show_ticket', ticket_uuid=ticket.id) }}">{{ ticket.name }}</a>
       </li>
       {% endfor %}
     </ol>
